@@ -7,21 +7,31 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
     <title>Stencil Component Starter</title>
+    <style>
+      html {
+        --primary-font-family: Arial, "sans-serif";
+        --primary-font-size: 1rem;
+
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
       integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
       crossorigin="anonymous"
     />
-
+  
     <script src="/build/mi-components.js"></script>
   </head>
   <body>
-    <mi-selection-card
+    <mi-button text="I'm a button">
+    </mi-button>
+
+    <!-- <mi-selection-card
       description="I'm a teacher"
       extra-info="Mentor, trainer, coordinator, etc."
     >
       <i class="fas fa-chalkboard-teacher" slot="icon"></i>
-    </mi-selection-card>
+    </mi-selection-card> -->
   </body>
 </html>

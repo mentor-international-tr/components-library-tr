@@ -1,0 +1,35 @@
+
+.btn {
+    padding: .6em 1em;
+    font-family: var(--primary-font-family, "sans-serif");
+    font-size: var(--primary-font-size, 1rem);
+    color: $white;
+    background: $blue;
+    cursor: pointer;    
+    border: none;
+
+    &:hover {
+        background: $dark-blue;
+    }
+    &:focus {
+        outline: 3px solid $dark-blue;
+    }
+    &:active {
+        color: $black;
+        background: $white;
+    }
+}
+
+.outline {
+    color: $blue;
+    background: none;
+    outline: 1px solid $blue;
+    &:hover {
+        color: $white;
+        background: $blue;
+    }
+    &:active {
+        background: $dark-blue;
+        color: $white;
+    }
+}
