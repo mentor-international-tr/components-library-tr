@@ -14,8 +14,10 @@ export class SelectionCard {
         <div class="icon__container">
           <slot name="icon" />
         </div>
-        {this.description ? <h2>{this.description}</h2> : null}
-        {this.extraInfo ? <p>{this.extraInfo}</p> : null}
+        {this.description ? (
+          <h2 class="description-test">{this.description}</h2>
+        ) : null}
+        {this.extraInfo ? <p class="extraInfo-test">{this.extraInfo}</p> : null}
       </div>
     );
   }
