@@ -11,7 +11,6 @@
 | ------------- | ------------- | ----------- | -------- | ----------- |
 | `description` | `description` |             | `string` | `undefined` |
 | `extraInfo`   | `extra-info`  |             | `string` | `undefined` |
-| `icon`        | `icon`        |             | `string` | `undefined` |
 
 
 ----------------------------------------------
