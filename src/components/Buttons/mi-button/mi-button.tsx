@@ -7,7 +7,8 @@ import { Component, Prop } from "@stencil/core";
 })
 export class SelectionCard {
   @Prop() text: string;
-  @Prop() outline: string;
+  @Prop() outline: boolean;
+
   render() {
     return (
       <button class={`btn ${this.outline ? "outline" : ""}`}>
