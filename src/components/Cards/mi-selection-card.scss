@@ -1,0 +1,12 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid $black;
+  &:hover {
+    background: $grey;
+  }
+}
+::slotted(.icon) {
+  border: 1px solid black;
+}
