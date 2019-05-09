@@ -8,15 +8,14 @@ import { Component, Prop } from "@stencil/core";
 export class SelectionCard {
   @Prop() description: string;
   @Prop() extraInfo: string;
-
   render() {
     return (
       <div class="card">
         <div class="icon__container">
           <slot name="icon" />
         </div>
-        <h2>{this.description}</h2>
-        <p>{this.extraInfo}</p>
+        {this.description ? <h2>{this.description}</h2> : null}
+        {this.extraInfo ? <p>{this.extraInfo}</p> : null}
       </div>
     );
   }
