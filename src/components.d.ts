@@ -13,9 +13,11 @@ import '@stencil/core';
 export namespace Components {
 
   interface MiButton {
+    'outline': string;
     'text': string;
   }
   interface MiButtonAttributes extends StencilHTMLAttributes {
+    'outline'?: string;
     'text'?: string;
   }
 
