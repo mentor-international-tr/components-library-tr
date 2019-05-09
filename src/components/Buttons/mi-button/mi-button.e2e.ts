@@ -8,6 +8,12 @@ describe("mi-button", () => {
     expect(element).toHaveClass("hydrated");
   });
 
+  it("renders button with text", async () => {
+    const page = await newE2EPage();
+    await page.setContent("<mi-button text='Hello there'></mi-button>");
+    const btnEl = await page.find("mi-button >>> button");
+    expect(btnEl.textContent).toEqual("Hello there");
+  });
   it("renders mi-button with outline class when outline prop is present", async () => {
     const page = await newE2EPage();
     await page.setContent("<mi-button outline></mi-button>");
