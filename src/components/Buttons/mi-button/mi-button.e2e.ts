@@ -7,7 +7,14 @@ describe("mi-button", () => {
     const element = await page.find("mi-button");
     expect(element).toHaveClass("hydrated");
   });
-
+  it("renders button with icon but without text", async () => {
+    const page = await newE2EPage();
+    await page.setContent(
+      "<mi-button><i class='fas fa-chalkboard-teacher' slot='icon'></i></mi-button>",
+    );
+    const iconEl = await page.find("mi-button > i[slot='icon']");
+    expect(iconEl).not.toBeNull();
+  });
   it("renders button with text", async () => {
     const page = await newE2EPage();
     await page.setContent("<mi-button text='Hello there'></mi-button>");
