@@ -12,7 +12,9 @@ export class SelectionCard {
   render() {
     return (
       <div class="card">
-        <slot name="icon" />
+        <div class="icon__container">
+          <slot name="icon" />
+        </div>
         <h2>{this.description}</h2>
         <p>{this.extraInfo}</p>
       </div>
