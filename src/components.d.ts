@@ -12,6 +12,15 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface MiButton {
+    'outline': boolean;
+    'text': string;
+  }
+  interface MiButtonAttributes extends StencilHTMLAttributes {
+    'outline'?: boolean;
+    'text'?: string;
+  }
+
   interface MiSelectionCard {
     'description': string;
     'extraInfo': string;
@@ -53,15 +62,23 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'MiButton': Components.MiButton;
     'MiSelectionCard': Components.MiSelectionCard;
     'MyComponent': Components.MyComponent;
   }
 
   interface StencilIntrinsicElements {
+    'mi-button': Components.MiButtonAttributes;
     'mi-selection-card': Components.MiSelectionCardAttributes;
     'my-component': Components.MyComponentAttributes;
   }
 
+
+  interface HTMLMiButtonElement extends Components.MiButton, HTMLStencilElement {}
+  var HTMLMiButtonElement: {
+    prototype: HTMLMiButtonElement;
+    new (): HTMLMiButtonElement;
+  };
 
   interface HTMLMiSelectionCardElement extends Components.MiSelectionCard, HTMLStencilElement {}
   var HTMLMiSelectionCardElement: {
@@ -76,11 +93,13 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'mi-button': HTMLMiButtonElement
     'mi-selection-card': HTMLMiSelectionCardElement
     'my-component': HTMLMyComponentElement
   }
 
   interface ElementTagNameMap {
+    'mi-button': HTMLMiButtonElement;
     'mi-selection-card': HTMLMiSelectionCardElement;
     'my-component': HTMLMyComponentElement;
   }
