@@ -1,0 +1,38 @@
+.drawer {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    min-width: 90%;
+    max-width: 500px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: $light-grey;
+    &.hide {
+        display: none;
+    }
+}
+
+.drawer__close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+header {
+    padding-bottom: 1em;
+    border-bottom: 1px solid $grey;
+    margin-top: 3rem;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.555);
+}

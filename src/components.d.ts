@@ -44,9 +44,15 @@ export namespace Components {
   }
 
   interface MiDrawer {
+    'backdrop': boolean;
+    'closable': boolean;
+    'close': () => void;
+    'open': () => void;
     'visible': boolean;
   }
   interface MiDrawerAttributes extends StencilHTMLAttributes {
+    'backdrop'?: boolean;
+    'closable'?: boolean;
     'visible'?: boolean;
   }
 
