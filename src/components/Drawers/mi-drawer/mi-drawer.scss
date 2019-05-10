@@ -1,6 +1,7 @@
 .drawer {
     display: flex;
     flex-direction: column;
+    font-family: var(--primary-font-family, "sans-serif");
     width: 40%;
     min-width: 90%;
     max-width: 500px;
@@ -22,11 +23,22 @@
 }
 
 header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 1em;
-    border-bottom: 1px solid $grey;
+    border-bottom: 1px solid rgba(202, 202, 202, 0.589);
     margin-top: 3rem;
 }
-
+.header__text-group {
+    p {
+        margin: 0;
+        padding: 0;
+    }
+    h3 {
+        margin-top: .4rem;
+    }
+}
 .backdrop {
     position: fixed;
     top: 0;

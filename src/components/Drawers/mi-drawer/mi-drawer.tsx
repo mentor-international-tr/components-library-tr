@@ -9,6 +9,7 @@ export class SelectionCard {
   @Prop({ mutable: true }) visible: boolean = true;
   @Prop() closable: boolean;
   @Prop() backdrop: boolean;
+  @Prop() name: string;
   @Method()
   open() {
     this.visible = true;
@@ -19,18 +20,22 @@ export class SelectionCard {
   }
   render() {
     return [
-      <div class={`drawer ${this.visible ? "" : "hide"}`}>
+      <aside class={`drawer ${this.visible ? "" : "hide"}`}>
+        {this.closable ? (
+          <mi-circle-button
+            class="drawer__close-btn"
+            with-x
+            onClick={this.close.bind(this)}
+          />
+        ) : null}
         <header>
-          {this.closable ? (
-            <mi-circle-button
-              class="drawer__close-btn"
-              with-x
-              onClick={this.close.bind(this)}
-            />
-          ) : null}
+          <div class="header__text-group">
+            <p>Hello,</p>
+            <h3>{this.name}</h3>
+          </div>
         </header>
         <section class="body-content" />
-      </div>,
+      </aside>,
       <div
         class={`${this.visible ? "backdrop" : "none"}`}
         onClick={this.close.bind(this)}
