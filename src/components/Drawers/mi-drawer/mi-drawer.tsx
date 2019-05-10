@@ -5,10 +5,10 @@ import { Component, Prop, Method } from "@stencil/core";
   styleUrl: "./mi-drawer.scss",
   shadow: true,
 })
-export class SelectionCard {
-  @Prop({ mutable: true }) visible: boolean = true;
+export class Drawer {
+  @Prop({ mutable: true }) visible: boolean;
   @Prop() closable: boolean;
-  @Prop() backdrop: boolean;
+  @Prop() enableBackdrop: boolean;
   @Prop() name: string;
   @Method()
   open() {
@@ -37,7 +37,7 @@ export class SelectionCard {
         <section class="body-content" />
       </aside>,
       <div
-        class={`${this.visible ? "backdrop" : "none"}`}
+        class={`${this.visible && this.enableBackdrop ? "backdrop" : "none"}`}
         onClick={this.close.bind(this)}
       />,
     ];
