@@ -34,7 +34,9 @@ export class Drawer {
             <h3>{this.name}</h3>
           </div>
         </header>
-        <section class="body-content" />
+        <section class="body-content">
+          <slot name="body-content" />
+        </section>
       </aside>,
       <div
         class={`${this.visible && this.enableBackdrop ? "backdrop" : "none"}`}

@@ -48,3 +48,9 @@ header {
     z-index: 99;
     background: rgba(0, 0, 0, 0.555);
 }
+.body-content {
+    display: flex;
+    justify-content: center;
+    margin-top: $space-lg;
+}
+
