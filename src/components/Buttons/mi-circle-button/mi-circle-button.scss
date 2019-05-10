@@ -1,0 +1,41 @@
+
+.btn {
+    display: flex;
+    padding: .3em .6em;
+    border-radius: 50%;
+    font-family: var("sans-serif");
+    font-size: var(--primary-font-size, 1rem);
+    color: $white;
+    background: $blue;
+    cursor: pointer;    
+    border: none;
+
+    &:hover {
+        background: $dark-blue;
+    }
+    &:focus {
+        outline: 3px solid $dark-blue;
+    }
+    &:active {
+        color: $white;
+        background: $darker-blue;
+    }
+}
+
+.outline {
+    color: $blue;
+    background: none;
+    border: 1px solid $blue;
+    &:hover {
+        color: $white;
+        background: $blue;
+    }
+    &:active {
+        background: $dark-blue;
+        color: $white;
+    }
+}
+
+.add-space-right {
+    padding-right: .4em;
+}

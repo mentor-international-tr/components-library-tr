@@ -12,6 +12,28 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface MiButton {
+    'outline': boolean;
+    'text': string;
+  }
+  interface MiButtonAttributes extends StencilHTMLAttributes {
+    'outline'?: boolean;
+    'text'?: string;
+  }
+
+  interface MiCircleButton {
+    'outline': boolean;
+    'text': string;
+    'withPlus': boolean;
+    'withX': boolean;
+  }
+  interface MiCircleButtonAttributes extends StencilHTMLAttributes {
+    'outline'?: boolean;
+    'text'?: string;
+    'withPlus'?: boolean;
+    'withX'?: boolean;
+  }
+
   interface MiSelectionCard {
     'description': string;
     'extraInfo': string;
@@ -19,6 +41,21 @@ export namespace Components {
   interface MiSelectionCardAttributes extends StencilHTMLAttributes {
     'description'?: string;
     'extraInfo'?: string;
+  }
+
+  interface MiDrawer {
+    'closable': boolean;
+    'close': () => void;
+    'enableBackdrop': boolean;
+    'name': string;
+    'open': () => void;
+    'visible': boolean;
+  }
+  interface MiDrawerAttributes extends StencilHTMLAttributes {
+    'closable'?: boolean;
+    'enableBackdrop'?: boolean;
+    'name'?: string;
+    'visible'?: boolean;
   }
 
   interface MyComponent {
@@ -53,20 +90,44 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'MiButton': Components.MiButton;
+    'MiCircleButton': Components.MiCircleButton;
     'MiSelectionCard': Components.MiSelectionCard;
+    'MiDrawer': Components.MiDrawer;
     'MyComponent': Components.MyComponent;
   }
 
   interface StencilIntrinsicElements {
+    'mi-button': Components.MiButtonAttributes;
+    'mi-circle-button': Components.MiCircleButtonAttributes;
     'mi-selection-card': Components.MiSelectionCardAttributes;
+    'mi-drawer': Components.MiDrawerAttributes;
     'my-component': Components.MyComponentAttributes;
   }
 
+
+  interface HTMLMiButtonElement extends Components.MiButton, HTMLStencilElement {}
+  var HTMLMiButtonElement: {
+    prototype: HTMLMiButtonElement;
+    new (): HTMLMiButtonElement;
+  };
+
+  interface HTMLMiCircleButtonElement extends Components.MiCircleButton, HTMLStencilElement {}
+  var HTMLMiCircleButtonElement: {
+    prototype: HTMLMiCircleButtonElement;
+    new (): HTMLMiCircleButtonElement;
+  };
 
   interface HTMLMiSelectionCardElement extends Components.MiSelectionCard, HTMLStencilElement {}
   var HTMLMiSelectionCardElement: {
     prototype: HTMLMiSelectionCardElement;
     new (): HTMLMiSelectionCardElement;
+  };
+
+  interface HTMLMiDrawerElement extends Components.MiDrawer, HTMLStencilElement {}
+  var HTMLMiDrawerElement: {
+    prototype: HTMLMiDrawerElement;
+    new (): HTMLMiDrawerElement;
   };
 
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
@@ -76,12 +137,18 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'mi-button': HTMLMiButtonElement
+    'mi-circle-button': HTMLMiCircleButtonElement
     'mi-selection-card': HTMLMiSelectionCardElement
+    'mi-drawer': HTMLMiDrawerElement
     'my-component': HTMLMyComponentElement
   }
 
   interface ElementTagNameMap {
+    'mi-button': HTMLMiButtonElement;
+    'mi-circle-button': HTMLMiCircleButtonElement;
     'mi-selection-card': HTMLMiSelectionCardElement;
+    'mi-drawer': HTMLMiDrawerElement;
     'my-component': HTMLMyComponentElement;
   }
 
