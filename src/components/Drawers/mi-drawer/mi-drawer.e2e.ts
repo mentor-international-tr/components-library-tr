@@ -20,4 +20,17 @@ describe("mi-drawer", () => {
     asideEl = await page.find("mi-drawer >>> aside.drawer");
     expect(asideEl).not.toHaveClass("hide");
   });
+  it("when calling the close() method, it makes the drawer close", async () => {
+    const page = await newE2EPage();
+    await page.setContent("<mi-drawer visible></mi-drawer>");
+
+    let asideEl = await page.find("mi-drawer >>> aside.drawer");
+    expect(asideEl).not.toHaveClass("hide");
+
+    const miDrawer = await page.find("mi-drawer");
+    await miDrawer.callMethod("close");
+
+    asideEl = await page.find("mi-drawer >>> aside.drawer");
+    expect(asideEl).toHaveClass("hide");
+  });
 });
